@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220717 22:31:59.416" rpa="false" schemaversion="3">
+<suite id="s1" name="Testeweb" source="E:\Giba\Trabalho\Treinamento\Python\Teste01\testeweb.robot">
+<test id="s1-t1" name="Caso Teste 01: Pesquisar produto no Site" line="6">
+<kw name="Acessar pagina home do site da loja" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220717 22:31:59.687" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20220717 22:31:59.687" endtime="20220717 22:32:04.942"/>
+</kw>
+<status status="PASS" starttime="20220717 22:31:59.686" endtime="20220717 22:32:04.942"/>
+</kw>
+<kw name="Digitar o produto &quot;blouse&quot; na pesquisa" library="resource" sourcename="Digitar o produto &quot;${PRODUTO}&quot; na pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=search_query_top</arg>
+<arg>${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220717 22:32:04.945" level="INFO">Typing text 'blouse' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20220717 22:32:04.944" endtime="20220717 22:32:05.079"/>
+</kw>
+<status status="PASS" starttime="20220717 22:32:04.943" endtime="20220717 22:32:05.079"/>
+</kw>
+<kw name="Clicar no botao Pesquisar" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=submit_search</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220717 22:32:05.081" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" starttime="20220717 22:32:05.080" endtime="20220717 22:32:06.459"/>
+</kw>
+<status status="PASS" starttime="20220717 22:32:05.080" endtime="20220717 22:32:06.460"/>
+</kw>
+<kw name="Fechar Navegador" library="resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220717 22:32:06.462" endtime="20220717 22:32:08.829"/>
+</kw>
+<status status="PASS" starttime="20220717 22:32:06.460" endtime="20220717 22:32:08.830"/>
+</kw>
+<status status="PASS" starttime="20220717 22:31:59.685" endtime="20220717 22:32:08.831"/>
+</test>
+<doc>Swite Exemplo webTesting</doc>
+<status status="PASS" starttime="20220717 22:31:59.418" endtime="20220717 22:32:08.833"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testeweb">Testeweb</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
