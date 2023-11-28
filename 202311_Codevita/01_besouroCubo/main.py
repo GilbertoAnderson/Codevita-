@@ -3,6 +3,8 @@
 # Gilberto Anderson
 # ..............................................................................
 import math
+import time
+
 # define variaveis
 xi = float(0)
 yi = float(0)
@@ -61,7 +63,15 @@ def calc_outraFace(xi, yi, zi, xf, yf, zf):
     else:
         distancia_z = zi - zf
 
-    distancia_outraface = float(distancia_x + distancia_y + distancia_z)
+     #.................... identifica qual a face que foi o besouro
+    if xf == 0:
+        distancia_x = distancia_x + distancia_z
+    else:
+        distancia_y = distancia_y + distancia_z
+
+    # ..................... aplica pitagoras para calculo da diagonal
+    distancia_outraface = float(distancia_x ** 2 + distancia_y ** 2)** 0.5    
+    
     return distancia_outraface
    
 
@@ -92,7 +102,7 @@ while True:
     while x < (len(coordenadas)-1):
         #print('passou aqui {}'.format(coordenadas[x]))
         try:
-            float(x)
+            float(coordenadas[x])
         except ValueError:
             s_float = False        
             print ("o valor de entrada {} não pode ser convertido em decimal".format(coordenadas[x]))
@@ -105,7 +115,8 @@ while True:
 
 
 
-#..... processa os pontos
+#................................................................ processa os pontos
+tempo_inicial = time.time()
 n = 0
 
 while n < (len(coordenadas)-3):
@@ -125,12 +136,17 @@ while n < (len(coordenadas)-3):
     else:
         distancia = calc_outraFace(xi, yi, zi, xf, yf, zf)
 
-    #print(distancia)
     dist_total +=  round(distancia,2) 
 
     n+= 3
 
+
+print('  ')
 print("a distância total é de {}".format(dist_total))
+print('processamento   %s segundos' % (time.time() - tempo_inicial))  
+print('  ')
+
+
 
 
 

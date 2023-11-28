@@ -1,0 +1,37 @@
+
+# define variaveis
+# define as funcoes
+        def verifica_face(xi, yi, zi, xf, yf, zf)
+        def calc_mesmaFace(xi, yi, zi, xf, yf, zf)
+        def calc_outraFace(xi, yi, zi, xf, yf, zf)
+            identifica qual a face que foi o besouro
+            aplica pitagoras para calculo da diagonal
+
+# recebe a quantidade de pontos
+    validar se é menor que 2
+    validar se é maior que 10
+
+# recebe as coordenadas x,y,z para cada ponto
+    verificar se a qtde é igual a qtde de posições informada anteriormente
+    verifica se os valores digitados podem ser convertidos em float
+
+# transforma os dados da lista em float
+
+# processa os pontos
+    identifica se esta na mesma face
+    chama funcao mesma face
+    chama funcao face diferente
+
+# totaliza a distancia
+
+
+
+
+
+    
+
+
+
+
+
+
