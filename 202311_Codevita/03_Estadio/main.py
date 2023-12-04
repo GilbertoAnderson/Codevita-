@@ -1,6 +1,7 @@
 # Codevita 2023
 # Estadio
 # Gilberto Anderson
+#  https://github.com/GilbertoAnderson/Codevita-/tree/main/202311_Codevita/03_Estadio
 # ..............................................................................
 # restricoes
 # S,N,K < 1000

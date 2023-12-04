@@ -1,18 +1,18 @@
 # Codevita 2023
 # Obstaculos
 # Gilberto Anderson
+# https://github.com/GilbertoAnderson/Codevita-/tree/main/202311_Codevita/07_obstaculos
 # ..............................................................................
 # restricoes
-# S,N,K < 1000
-# M < 30
+# 2 <= N <= 20
 # tempo limite 1 seg
 # ..............................................................................
 import time
 
 
 # .............................................................................. define variaveis
-print_log = False
-simulacao = False
+print_log = True
+simulacao = True
 
 # .............................................................................. funcoes
 def gerar_matriz (n_linhas, n_colunas):
@@ -57,11 +57,11 @@ if simulacao == False:
 
             if N <= 2:
                 s_int = False
-                print (" A quantidade de caixas deve estar entre 2 e 50 ")
+                print (" A quantidade de caixas deve estar entre 2 e 20 ")
 
             if N >= 21:
                 s_int = False
-                print (" A quantidade de pontos deve estar entre 2 e 50 ")
+                print (" A quantidade de pontos deve estar entre 2 e 20 ")
         
         if s_int == True:  
             break
@@ -169,7 +169,7 @@ while destino == '': # executa ate encontrar destino
     if print_log == True:
         print('rodada..... {}'.format(x))
         print('Atual... {}, {}'.format(lin_atual,col_atual))
-        x =+ 1
+        x += 1
 
     # identifica que ainda nao achou o proximo ponto
     achou_proximo = False
@@ -238,6 +238,7 @@ while destino == '': # executa ate encontrar destino
         obstaculos = sorted(obstaculos)
         # inserir na lista
         resposta.append(obstaculos)
+
 
     saida = False
     
