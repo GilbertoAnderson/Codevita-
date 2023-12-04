@@ -17,7 +17,7 @@ dist_total = float(0)
 
 
 
-# define as funcoes
+# ................................................ define as funcoes
 def verifica_face(xi, yi, zi, xf, yf, zf):
     mesma_face = True
     coordenadas_iguais = 0
@@ -31,6 +31,7 @@ def verifica_face(xi, yi, zi, xf, yf, zf):
         mesma_face = False
     return mesma_face
 
+# ................................................ calculo para mesma face
 def calc_mesmaFace(xi, yi, zi, xf, yf, zf):  
     raio = float(0)
     if xi != xf:
@@ -42,6 +43,8 @@ def calc_mesmaFace(xi, yi, zi, xf, yf, zf):
     arco = float( 2 * raio * 3.141516)/6 
     return arco
 
+
+# ................................................ calculo para outra face
 def calc_outraFace(xi, yi, zi, xf, yf, zf): 
     
     distancia_x = float(0)
@@ -63,7 +66,7 @@ def calc_outraFace(xi, yi, zi, xf, yf, zf):
     else:
         distancia_z = zi - zf
 
-     #.................... identifica qual a face que foi o besouro
+     #.................... identifica qual a face que mudou
     if xf == 0:
         distancia_x = distancia_x + distancia_z
     else:
@@ -74,8 +77,8 @@ def calc_outraFace(xi, yi, zi, xf, yf, zf):
     
     return distancia_outraface
    
-
-# recebe a quantidade de pontos
+# ......................................... inicio da coleta de dados
+# ................................. recebe a quantidade de pontos
 while True:
     qtde_posicoes = int(input("digite a quantidade de pontos: "))
     if qtde_posicoes < 2:
@@ -85,7 +88,7 @@ while True:
     else:
         break
 
-# recebe as coordenadas x,y,z para cada ponto
+# ................................. recebe as coordenadas x,y,z para cada ponto
 while True:    
     coordenadas = input("digite as coordenadas: ").split(",")
 
@@ -140,10 +143,14 @@ while n < (len(coordenadas)-3):
 
     n+= 3
 
-
+# ..................................... mostra o resultado
 print('  ')
+print('- '*30)
+print('Resultado')
+print('- '*30)
 print("a distância total é de {}".format(dist_total))
 print('processamento   %s segundos' % (time.time() - tempo_inicial))  
+print('- '*30)
 print('  ')
 
 

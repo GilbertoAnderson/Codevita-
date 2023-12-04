@@ -20,21 +20,21 @@ N = int(0) # N - contingente
 k = int(0) # k - dispostos a sentar no molhado
 M = int(0) # M - qtde de blocos de assentos
 
-tipoAssento = int(0)       # assento seco ou molhado
-assentoDesocupado = int(0) # qtde de assento desocupado na pipeline
-assentoSeco = int(0) # qtde de assento desocupado na pipeline
-assentoMolhado = int(0) # qtde de assento desocupado na pipeline
-limiteDesocupado = int(15) # qtde maxima de assento desocupado
-assentoInicial = int(0)    # numero do assento que iniciou a fila 
-assentoFinal = int(0)     # numero do assento que finalizou a fila
+tipoAssento = int(0)            # tipo do assento seco ou molhado
+assentoDesocupado = int(0)      # qtde de assentos desocupados na fila
+assentoSeco = int(0)            # qtde de assentos secos na fila
+assentoMolhado = int(0)         # qtde de assentos molhados na fila
+limiteDesocupado = int(15)      # qtde maxima de assento desocupado
+assentoInicial = int(0)         # numero do assento que iniciou a fila 
+assentoFinal = int(0)           # numero do assento que finalizou a fila
 
-primeiroAssentoInicial = int(0)    # primeiro assento que iniciou a fila
-ultimoAssentoInicial = int(0)    # primeiro assento que iniciou a fila
-distanciaAssentos = int(0) # qtde de assentos na fila
-distanciaTemp = int(0)     # qtde de assentos na fila valor temporariopython
+primeiroAssentoInicial = int(0) # primeiro assento que iniciou a fila
+ultimoAssentoInicial = int(0)   # primeiro assento que iniciou a fila
+distanciaAssentos = int(0)      # qtde de assentos na fila
+distanciaTemp = int(0)          # qtde de assentos na fila valor temporariopython
 
 # processo inicia a fila no primeiro assento
-# caso todas restrições sejam aceitas calcular a distancia egravar em distanciaTemp
+# caso todas restrições sejam aceitas calcular a distancia e gravar em distanciaTemp
 # caso distanciaAssentos = 0 ou menor que distanciaTemp, substituir o valor de 
 # distanciaAssentos pelo valor de distanciaTemp
 
@@ -60,8 +60,8 @@ while True:
                 print ("o valor de entrada {} não pode ser convertido em inteiro".format(entrada[x]))
             x+= 1
     # ................ valida as restricoes
-# S,N,K < 1000
-# M < 30
+    # S,N,K < 1000
+    # M < 30
     if s_int == True:    
         S = int(entrada[0])
         N = int(entrada[1])
@@ -69,19 +69,19 @@ while True:
         M = int(entrada[3]) 
         if S >= 1000 :
             s_int = False        
-            print ("o limite de assentos reservados é de 999 e está com {}!".format(S))
+            print ("o limite de assentos reservados é menor que 1000 e está com {}!".format(S))
         
         if N >= 1000 :
             s_int = False        
-            print ("o limite de contigente é de 999 e está com {}!".format(N))
+            print ("o limite de contigente é menor que 1000 e está com {}!".format(N))
 
         if k >= 1000 :
             s_int = False        
-            print ("o limite de assentos molhados possíveis é de 999 e está com {}!".format(k))
+            print ("o limite de assentos molhados possíveis é menor que 1000 e está com {}!".format(k))
 
         if M >= 30 :
             s_int = False        
-            print ("o limite de blocos é de 29 e está com {}!".format(M))    
+            print ("o limite de blocos é menor que 30 e está com {}!".format(M))    
 
 
     #................ popula as variaveis e segue para a proxima entrada de dados
@@ -119,9 +119,9 @@ while True:
     # ............... valida a quantidade de assentos é igual a informada
     if s_int == True:
         assentosBloco = [int(i) for i in assentosBloco]    
-        if sum(assentosBloco) > S:
+        if sum(assentosBloco) != S:
             s_int = False        
-            print ("A soma dos assentos ({})é maior quantidade assentos ({}) informada inicialmente {}!".format(sum(assentosBloco), S))            
+            print ("A soma dos assentos ({}) é maior que quantidade assentos ({}) informada inicialmente!".format(sum(assentosBloco), S))            
 
 
     #................ popula as variaveis e segue para a proxima entrada de dados
@@ -256,10 +256,14 @@ while assentoInicial <= maxAssentoInicial:
 
 
 print('  ')
+print('- '*50)
+print('R e s u l t a d o')
+print('- '*50)
 print('assento inicial {}'.format(primeiroAssentoInicial))
 print('assento final.. {}'.format(ultimoAssentoInicial))
 print('distancia ..... {}'.format(distanciaAssentos))  
 print('processamento   %s segundos' % (time.time() - tempo_inicial))  
+print('- '*50)
 print('  ')
 
 
